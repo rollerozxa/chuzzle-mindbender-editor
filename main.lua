@@ -17,7 +17,7 @@ debuggrid = false
 
 scenes = {}
 
-json = require("misc.json")
+--json = require("misc.json")
 
 require("editor")
 require("util")
