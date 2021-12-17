@@ -7,7 +7,7 @@ function CheckCollision(x1,y1,w1,h1, x2,y2,w2,h2)
 end
 
 function CheckMouseCollision(x,y,w,h)
-	return CheckCollision(x, y, w, h, love.mouse.getX(), love.mouse.getY(), 4, 4) and love.mouse.isDown(1) and not oldmousedown
+	return CheckCollision(x, y, w, h, love.mouse.getX(), love.mouse.getY(), 4, 4)
 end
 
 function CheckMouseCollisionScaled(x,y,w,h)

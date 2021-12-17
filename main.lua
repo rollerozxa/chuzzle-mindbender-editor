@@ -12,6 +12,7 @@ state = 1
 newlyState = true
 
 currentLevel = {}
+currentChuzz = 1
 
 debuggrid = false
 
