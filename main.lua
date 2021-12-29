@@ -48,12 +48,12 @@ function love.load()
 			cyan = NewImage("chuzz8"),
 		},
 		eyes = NewImage("eyes"),
+		eyes_closed = NewImage("eyes_closed"),
 		chuzz_bg = NewImage("chuzz_bg"),
 		fonts = {
-			default = love.graphics.newFont(11),
-			defaultSmall = love.graphics.newFont(20),
-			defaultMedium = love.graphics.newFont(24),
-			defaultBig = love.graphics.newFont(40)
+			default = love.graphics.newFont("assets/Unifont.ttf", 16, "none"),
+			defaultMedium = love.graphics.newFont("assets/Unifont.ttf", 24, "none"),
+			defaultBig = love.graphics.newFont("assets/Unifont.ttf", 32, "none")
 		},
 		debug_grid = NewImage("_debug_grid")
 	}

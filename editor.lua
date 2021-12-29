@@ -18,6 +18,13 @@ function scenes.editor.update()
 		if love.mouse.isDown(1) and pointedChuzz.x >= 1 and pointedChuzz.y >= 1 then
 			currentLevel[pointedChuzz.x][pointedChuzz.y] = currentChuzz
 		end
+	elseif CheckMouseCollisionScaled(10*32, 2*32, 2*32, 4*32) then
+		pointedChuzz.x = math.floor(love.mouse.getX() / ScaledX(32)) - 9
+		pointedChuzz.y = math.floor(love.mouse.getY() / ScaledY(32)) - 1
+
+		if love.mouse.isDown(1) and pointedChuzz.x >= 1 and pointedChuzz.y >= 1 then
+			currentChuzz = hackyChuzzleChooserConverter(pointedChuzz.x, pointedChuzz.y)
+		end
 	else
 		pointedChuzz.x = -1
 		pointedChuzz.y = -1
@@ -36,6 +43,23 @@ function scenes.editor.draw()
 			end
 			love.graphics.draw(assets.chuzz[chuzzID_IDToName(chuzz)], x2, y2, 0, ScaledX(), ScaledY())
 			love.graphics.draw(assets.eyes, x2, y2, 0, ScaledX(), ScaledY())
+		end
+	end
+
+	love.graphics.print("Chuzzles", ScaledX(32*10), ScaledY(48))
+
+	local i = 0
+	for x = 0,1 do
+		for y = 0,3 do
+			local x2 = ScaledX(32*10+32*x)
+			local y2 = ScaledY(32*2+32*y)
+			love.graphics.draw(assets.chuzz[chuzzID_IDToName(i)], x2, y2, 0, ScaledX(), ScaledY())
+			if currentChuzz == i then
+				love.graphics.draw(assets.eyes, x2, y2, 0, ScaledX(), ScaledY())
+			else
+				love.graphics.draw(assets.eyes_closed, x2, y2, 0, ScaledX(), ScaledY())
+			end
+			i = i + 1
 		end
 	end
 end

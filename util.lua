@@ -51,3 +51,29 @@ function chuzzID_IDToName(name)
 	if name == 6 then return "white" end
 	if name == 7 then return "cyan" end
 end
+
+chuzzles = {
+	"red",
+	"green",
+	"blue",
+	"orange",
+	"yellow",
+	"pink",
+	"white",
+	"cyan"
+}
+
+-- this is a HACK!!
+function hackyChuzzleChooserConverter(x,y)
+	if x == 1 then
+		if y == 1 then return 0 end
+		if y == 2 then return 1 end
+		if y == 3 then return 2 end
+		if y == 4 then return 3 end
+	else
+		if y == 1 then return 4 end
+		if y == 2 then return 5 end
+		if y == 3 then return 6 end
+		if y == 4 then return 7 end
+	end
+end
